@@ -1,6 +1,6 @@
 <?php
 
-$DATABASE_URL = parse_url('Your database URL');
+$DATABASE_URL = parse_url('postgres://dvjmyinbwjplmh:f2087a0e6e9789de6e934be2e3ccbfba02a070ed3e6f0acdd6e2b75c028449a5@ec2-184-73-169-163.compute-1.amazonaws.com:5432/da9u6sr8ti4p0o');
 
 return [
 
@@ -60,7 +60,7 @@ return [
             'driver' => 'pgsql',
             'host' => $DATABASE_URL["host"],
             'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'database' => substr($DATABASE_URL["path"], 1),
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
