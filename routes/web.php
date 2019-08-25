@@ -10,12 +10,15 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$DATABASE_URL = parse_url('postgres://dvjmyinbwjplmh:f2087a0e6e9789de6e934be2e3ccbfba02a070ed3e6f0acdd6e2b75c028449a5@ec2-184-73-169-163.compute-1.amazonaws.com:5432/da9u6sr8ti4p0o');
+
+// database to the application
+//$DATABASE_URL = parse_url('postgres://dvjmyinbwjplmh:f2087a0e6e9789de6e934be2e3ccbfba02a070ed3e6f0acdd6e2b75c028449a5@ec2-184-73-169-163.compute-1.amazonaws.com:5432/da9u6sr8ti4p0o');
 
 
-$router->get('/', function () use ($router, $DATABASE_URL) {
+$router->get('/', function () use ($router) {
 
-    dd(ltrim($DATABASE_URL["path"], "/"));
+//    dd($DATABASE_URL);
+    return 'Welcome';
     //    return $router->app->version();
 
 });
