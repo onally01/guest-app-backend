@@ -11,7 +11,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Carbon;
 
-class GuestLogResource extends JsonResource
+class GuestResource extends JsonResource
 {
     public function toArray($request)
     {
