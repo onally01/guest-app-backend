@@ -19,6 +19,8 @@ php -S localhost:8000 -t public
 
 ## Api Documentation
 
+https://documenter.getpostman.com/view/3975252/SVfNuUb7?version=latest
+
 
 
 
