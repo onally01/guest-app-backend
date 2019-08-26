@@ -67,6 +67,9 @@ class GuestController extends Controller
      */
     public function update(Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+        ]);
         $params = $request->all();
 
         // validate input field
@@ -96,6 +99,6 @@ class GuestController extends Controller
     }
 
     private function collection($data){
-        return GuestResource::collection($data);
+        return (GuestResource::collection($data));
     }
 }

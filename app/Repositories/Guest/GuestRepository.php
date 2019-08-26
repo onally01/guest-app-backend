@@ -68,8 +68,8 @@ class GuestRepository implements GuestInterface
         $model->name = $params['name'];
         $model->staff_id = $params['staff'];
         $model->purpose = $params['purpose'];
-        $model->email = $params['email'];
-        $model->mobile = $params['mobile'];
+        $model->email = $params['email'] ?? '';
+        $model->mobile = $params['mobile'] ?? '';
         $model->time_in = Carbon::now()->format('H:i:s');
     }
 

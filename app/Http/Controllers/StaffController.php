@@ -54,6 +54,11 @@ class StaffController extends Controller
      */
     public function update(Request $request)
     {
+
+
+        $this->validate($request, [
+           'id' => 'required',
+        ]);
         $params = $request->all();
 
 
@@ -72,6 +77,9 @@ class StaffController extends Controller
      */
     public function delete(Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+        ]);
         $this->staff->delete($request->id);
         return $this->index();
     }
@@ -80,11 +88,11 @@ class StaffController extends Controller
         return Validator::make($request,
             [
                 'name' => 'required',
-                'department' => 'required',
+                'department' => 'required|exists:departments,id',
             ]);
     }
 
     private function collection($data){
-        return StaffResource::collection($data);
+        return (StaffResource::collection($data));
     }
 }
